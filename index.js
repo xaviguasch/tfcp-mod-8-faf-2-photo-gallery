@@ -13,4 +13,21 @@
             Each photo should be at least 1rem away from the photos around it
 */
 
-console.log('testing!')
+async function getPhotos() {
+  const response = await fetch('./photos.json')
+  const photos = await response.json()
+
+  const images = photos
+    .map((photo) => {
+      return `<img class="my-photo" src="https://picsum.photos/id/${photo.id}/100/100" alt="${photo.title}">`
+    })
+    .join('')
+
+  document.body.innerHTML = `<div class="my-photos">
+    ${images}
+  </div>`
+
+  document.body.append(htmlContent)
+}
+
+getPhotos()
