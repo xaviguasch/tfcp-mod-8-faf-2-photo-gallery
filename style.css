@@ -12,17 +12,14 @@ body {
 
 .my-gallery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.my-selected-photo {
+  flex-direction: column-reverse;
+  align-items: flex-start;
 }
 
 .my-photos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .my-photo {
